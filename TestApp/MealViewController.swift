@@ -26,6 +26,13 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         // Do any additional setup after loading the view, typically from a nib.
         fieldText.delegate = self
 
+        if let meal = meal{
+            navigationItem.title = meal.name
+            fieldText.text = meal.name
+            photoImageView.image = meal.photo
+            ratingControl.rating = meal.rating
+        }
+
         updateSaveButtonState()
     }
 
@@ -60,9 +67,19 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
 
     //Mark : Navigation
     @IBOutlet weak var cancelBtn: UIBarButtonItem!
-    
+
     @IBAction func cancelBtn(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        if isPresentingInAddMealMode{
+            dismiss(animated: true, completion: nil)
+        }
+        else if let owningNavigationController = navigationController{
+            owningNavigationController.popViewController(animated: true)
+        }
+        else{
+            fatalError("The MealViewController is not inside a navigation controller.")
+        }
+
     }
 
 

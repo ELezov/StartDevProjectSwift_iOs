@@ -23,16 +23,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dlM-dN-u4U">
-                                <rect key="frame" x="16" y="72" width="300" height="393"/>
+                                <rect key="frame" x="16" y="72" width="300" height="394"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="bottom" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Rn-Oy-R9A">
-                                        <rect key="frame" x="94" y="0.0" width="112" height="17"/>
+                                        <rect key="frame" x="94" y="0.0" width="112" height="17.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <imageView autoresizesSubviews="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="250" placeholderIntrinsicHeight="250" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="RZN-Oi-OlB">
-                                        <rect key="frame" x="25" y="25" width="250" height="250"/>
+                                        <rect key="frame" x="25" y="25.5" width="250.5" height="250"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="RZN-Oi-OlB" secondAttribute="height" multiplier="1:1" id="47z-qo-utx"/>
@@ -42,7 +42,7 @@
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZqB-A9-gDG" customClass="RatingControl" customModule="TestApp" customModuleProvider="target">
-                                        <rect key="frame" x="5.5" y="283" width="289" height="110"/>
+                                        <rect key="frame" x="5.5" y="283.5" width="289" height="110"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -114,8 +114,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZPu-0L-IUI" customClass="RatingControl" customModule="TestApp" customModuleProvider="target">
-                                            <rect key="frame" x="98" y="37" width="269" height="44"/>
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZPu-0L-IUI" customClass="RatingControl" customModule="TestApp" customModuleProvider="target">
+                                            <rect key="frame" x="98" y="37" width="222" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </stackView>
                                     </subviews>
@@ -124,6 +124,7 @@
                                     <outlet property="nameLabel" destination="vS6-m2-Vpb" id="qzm-wc-7dx"/>
                                     <outlet property="photoImageView" destination="8eS-dv-fXa" id="j8u-Ad-Boc"/>
                                     <outlet property="ratingControl" destination="ZPu-0L-IUI" id="LBL-a3-eCS"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="ncD-Ml-sGE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -178,10 +179,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Avb-HE-3jO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1575" y="41.197183098591552"/>
+            <point key="canvasLocation" x="1629" y="427"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultPhoto" width="512" height="375"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ncD-Ml-sGE"/>
+    </inferredMetricsTieBreakers>
 </document>
