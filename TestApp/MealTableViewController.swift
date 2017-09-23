@@ -102,6 +102,20 @@ class MealTableViewController: UITableViewController {
         return cell
     }
 
+    //Delete
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            meals.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert{
+
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
     //MARK : Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
